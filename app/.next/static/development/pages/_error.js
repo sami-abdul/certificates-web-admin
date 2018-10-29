@@ -1,4 +1,4 @@
-((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\_error.js"],{
+((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/_error.js"],{
 
 /***/ "../node_modules/@babel/runtime-corejs2/core-js/array/from.js":
 /*!********************************************************************!*\
@@ -6142,7 +6142,7 @@ if (hadRuntime) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __NEXT_REGISTER_PAGE('/_error', function() {
-module.exports = __webpack_require__(/*! E:\Paid Projects\Blockchain\Student Certificates\SC App\node_modules\next\dist\pages\_error.js */"../node_modules/next/dist/pages/_error.js");
+module.exports = __webpack_require__(/*! /media/sami/Local Disk/Workspace/Xord.one/blockchain-pak-web-admin/node_modules/next/dist/pages/_error.js */"../node_modules/next/dist/pages/_error.js");
 
 return { page: module.exports.default }});
 

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -661,8 +661,7 @@ var abi = [{
   "payable": false,
   "stateMutability": "nonpayable",
   "type": "function"
-}]; // const contractAddress = '0x9dbe0d829807514e8358db108413260f573bd5a8';
-
+}];
 var contractAddress = '0x0da2dda88b77be6302e070171bd78d007470f611';
 /* harmony default export */ __webpack_exports__["default"] = (new _interface_web3__WEBPACK_IMPORTED_MODULE_0__["default"].eth.Contract(abi, contractAddress));
 
@@ -745,6 +744,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+/**
+ * Home page
+ */
 
 var StudentCertificateIndex =
 /*#__PURE__*/
@@ -1017,7 +1019,7 @@ var helperFunctions = {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

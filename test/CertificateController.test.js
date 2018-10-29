@@ -27,7 +27,6 @@ contract('CertificateController', function (accounts) {
         await certificateEvent.watch(async function (err, result) {
             certificateId = await result.args.certificateId;
         });
-
     });
 
     it('gets certificate by certId', async function () {
@@ -41,7 +40,6 @@ contract('CertificateController', function (accounts) {
         revokeEvent.watch(function (err, result) {
             console.log(result)
         })
-
     });
 
     it('gets certificate by student id', async function () {
@@ -55,6 +53,4 @@ contract('CertificateController', function (accounts) {
     it('Checks if certificate is issued', async function () {
         assert(await certificateController.isCertificateIssued(certificateId));
     });
-
-
 });

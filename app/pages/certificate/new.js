@@ -6,6 +6,10 @@ import CertificateController from '../../interface/certificateController';
 import web3 from '../../interface/web3'
 import HelperFunctions from '../../utils/constants'
 
+/**
+ * New certificate page
+ */
+
 class CertificateNew extends Component {
     state = {
         studentId: '',
@@ -53,7 +57,6 @@ class CertificateNew extends Component {
     render() {
         return (
             <Layout>
-
                 <div style={{marginTop: '50px'}}>
                     <Link route={`index`}>
                         <a>

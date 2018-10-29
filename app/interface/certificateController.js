@@ -390,9 +390,6 @@ let abi = [
     }
 ];
 
-// const contractAddress = '0x9dbe0d829807514e8358db108413260f573bd5a8';
 const contractAddress = '0x0da2dda88b77be6302e070171bd78d007470f611';
-
-
 
 export default new web3.eth.Contract(abi, contractAddress);

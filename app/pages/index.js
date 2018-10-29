@@ -5,6 +5,10 @@ import {Link} from '../../routes'
 import Layout from '../components/Layout'
 import HelperFunctions from "../utils/constants";
 
+/**
+ * Home page
+ */
+
 class StudentCertificateIndex extends Component {
 
     state = {
@@ -75,7 +79,6 @@ class StudentCertificateIndex extends Component {
         return <Card.Group items={items}/>
     };
 
-
     render() {
         const options = [
             {key: 'studentId', text: 'Student ID', value: 'studentId'},
@@ -122,13 +125,9 @@ class StudentCertificateIndex extends Component {
                     No certificates to show. <br/>Please use search.
                 </Header> : null}
                 </div>
-
-
             </Layout>
         )
     }
-
-
 }
 
 export default StudentCertificateIndex;

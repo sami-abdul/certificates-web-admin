@@ -4,7 +4,6 @@ import {Link} from '../../routes';
 import HelperFunctions from '../utils/constants';
 import CertificateController from '../interface/certificateController';
 
-
 class Header extends Component {
 
     state = {
@@ -28,7 +27,6 @@ class Header extends Component {
             this.setState({errorMessage: e.message});
         }
         this.setState({loading: false, contributionValue: ''});
-
     };
 
 
@@ -59,7 +57,6 @@ class Header extends Component {
             </Layout>
         )
     };
-
 }
 
 export default Header;

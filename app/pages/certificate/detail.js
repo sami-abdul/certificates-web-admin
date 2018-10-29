@@ -6,6 +6,9 @@ import {Link, Router} from '../../../routes';
 import Layout from '../../components/Layout'
 import web3 from "../../interface/web3";
 
+/**
+ * Certificate details page
+ */
 
 class CertificateDetail extends Component {
     state = {
@@ -15,12 +18,10 @@ class CertificateDetail extends Component {
     };
 
     static async getInitialProps(props) {
-
         const certificate = await CertificateController.methods.getCertificateById(props.query.address).call();
 
         let date = new Date(parseInt(certificate['4']));
         const certificateDate = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
-
 
         return {
             address: props.query.address,
@@ -90,7 +91,6 @@ class CertificateDetail extends Component {
         ];
 
         return <Card.Group style={{marginTop: '20px'}} items={items}/>
-
     };
 
     flipCertificateStatus = async (props) => {
@@ -125,7 +125,6 @@ class CertificateDetail extends Component {
                 });
             this.setState({loading: false});
             Router.pushRoute(`/certificate/${this.props.address}`);
-
         }
     };
 
@@ -155,15 +154,11 @@ class CertificateDetail extends Component {
                     content={content}
                     icon='circle'
                     primary/>
-
                 <div style={{marginTop: '40px'}}>
                     { this.state.transactionHash ?  <a href={this.state.transactionHash} target="_blank" >See transaction status on EtherScan</a> : null }
                 </div>
                 </div>
-
             </Layout>
-
-
         )
     }
 }
