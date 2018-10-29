@@ -112,7 +112,7 @@ module.exports = __webpack_require__(/*! next/app */ "next/app")
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /media/sami/Local Disk/Workspace/Xord.one/blockchain-pak-web-admin/node_modules/next/dist/pages/_app.js */"../node_modules/next/dist/pages/_app.js");
+module.exports = __webpack_require__(/*! E:\Paid Projects\Blockchain\Student Certificates\test\blockchain-pak-web-admin\node_modules\next\dist\pages\_app.js */"../node_modules/next/dist/pages/_app.js");
 
 
 /***/ }),

@@ -138,9 +138,9 @@ class CertificateDetail extends Component {
         return (
             <Layout>
                 <div style={{marginTop: '50px'}}>
-                    <Link route={`index`}>
+                    <Link route={`/`}>
                         <a>
-                            Back
+                            Home
                         </a>
                     </Link>
                     <h1>Certificate Details</h1>

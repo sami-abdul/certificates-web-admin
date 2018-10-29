@@ -58,9 +58,9 @@ class CertificateNew extends Component {
         return (
             <Layout>
                 <div style={{marginTop: '50px'}}>
-                    <Link route={`index`}>
+                    <Link route={`/`}>
                         <a>
-                            Back
+                            Home
                         </a>
                     </Link>
                     <h2>Fill in the details of Certificate to issue</h2>
