@@ -19,10 +19,8 @@ class CertificateDetail extends Component {
 
     static async getInitialProps(props) {
         const certificate = await CertificateController.methods.getCertificateById(props.query.address).call();
-
-        let date = new Date(parseInt(certificate['4']));
+        let date = new Date(parseInt(certificate['5']));
         const certificateDate = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
-
         return {
             address: props.query.address,
             studentId: HelperFunctions.convertHexToString(certificate['0']),
@@ -30,7 +28,7 @@ class CertificateDetail extends Component {
             studentName: HelperFunctions.convertHexToString(certificate['2']),
             courseName: HelperFunctions.convertHexToString(certificate['3']),
             issuedDate: certificateDate,
-            isRevoked: certificate['5']
+            isRevoked: certificate['6']
         };
     };
 
@@ -96,14 +94,14 @@ class CertificateDetail extends Component {
     flipCertificateStatus = async (props) => {
         let statusEvent;
         const accounts = await web3.eth.getAccounts();
-        this.setState({loading: true, errorMessage: ''});
+        this.setState({ errorMessage: ''});
         if (this.props.isRevoked) {
             await CertificateController.methods
                 .enactCertificate(this.props.address)
                 .send({
                     from: accounts[0]
                 }).on('transactionHash',(hash) =>{
-                    this.setState({transactionHash : 'https://rinkeby.etherscan.io/tx/'+hash})
+                    this.setState({transactionHash : 'https://rinkeby.etherscan.io/tx/'+hash ,loading: true})
                 }).on('confirmation', function () {
                     console.log("Transaction confirmed");
                 }).then(function (newCertificateInstance) {

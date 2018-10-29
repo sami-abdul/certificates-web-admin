@@ -25,8 +25,8 @@ class CertificateNew extends Component {
         let certificateAddress ;
         event.preventDefault();
         const {studentId, courseId, studentName, courseName} = this.state;
-        this.setState({loading: true, errorMessage: ''});
-
+        this.setState({errorMessage: ''});
+         
         try {
             const accounts = await web3.eth.getAccounts();
             await CertificateController.methods
@@ -39,7 +39,7 @@ class CertificateNew extends Component {
                 .send({
                     from: accounts[0]
                 }).on('transactionHash',(hash) =>{
-                    this.setState({transactionHash : 'https://rinkeby.etherscan.io/tx/'+hash})
+                    this.setState({transactionHash : 'https://rinkeby.etherscan.io/tx/'+hash, loading: true})
                 }).on('confirmation', function(){
                 console.log("Transaction confirmed");
             }).then(function (newCertificateInstance) {

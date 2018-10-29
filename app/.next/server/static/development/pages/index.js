@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -363,27 +363,34 @@ __webpack_require__.r(__webpack_exports__);
 
 var abi = [{
   "constant": false,
-  "inputs": [],
-  "name": "unpause",
+  "inputs": [{
+    "name": "_certId",
+    "type": "bytes32"
+  }],
+  "name": "enactCertificate",
   "outputs": [],
   "payable": false,
   "stateMutability": "nonpayable",
   "type": "function"
 }, {
-  "constant": true,
-  "inputs": [],
-  "name": "paused",
-  "outputs": [{
-    "name": "",
-    "type": "bool"
-  }],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
-}, {
   "constant": false,
-  "inputs": [],
-  "name": "renounceOwnership",
+  "inputs": [{
+    "name": "_stdId",
+    "type": "bytes32"
+  }, {
+    "name": "_crsId",
+    "type": "bytes32"
+  }, {
+    "name": "_stdName",
+    "type": "bytes32"
+  }, {
+    "name": "_crsName",
+    "type": "bytes32"
+  }, {
+    "name": "_date",
+    "type": "uint256"
+  }],
+  "name": "issueCertificate",
   "outputs": [],
   "payable": false,
   "stateMutability": "nonpayable",
@@ -397,37 +404,37 @@ var abi = [{
   "stateMutability": "nonpayable",
   "type": "function"
 }, {
-  "constant": true,
+  "constant": false,
   "inputs": [],
-  "name": "owner",
-  "outputs": [{
-    "name": "",
-    "type": "address"
-  }],
+  "name": "renounceOwnership",
+  "outputs": [],
   "payable": false,
-  "stateMutability": "view",
+  "stateMutability": "nonpayable",
   "type": "function"
 }, {
-  "constant": true,
-  "inputs": [],
-  "name": "isOwner",
-  "outputs": [{
-    "name": "",
-    "type": "bool"
+  "constant": false,
+  "inputs": [{
+    "name": "_certId",
+    "type": "bytes32"
   }],
+  "name": "revokeCertificate",
+  "outputs": [],
   "payable": false,
-  "stateMutability": "view",
+  "stateMutability": "nonpayable",
   "type": "function"
 }, {
-  "constant": true,
-  "inputs": [],
-  "name": "repository",
-  "outputs": [{
-    "name": "",
-    "type": "address"
+  "constant": false,
+  "inputs": [{
+    "name": "_certId",
+    "type": "bytes32"
+  }, {
+    "name": "_txHash",
+    "type": "bytes32"
   }],
+  "name": "setCertificateTxHash",
+  "outputs": [],
   "payable": false,
-  "stateMutability": "view",
+  "stateMutability": "nonpayable",
   "type": "function"
 }, {
   "constant": false,
@@ -436,6 +443,14 @@ var abi = [{
     "type": "address"
   }],
   "name": "transferOwnership",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [],
+  "name": "unpause",
   "outputs": [],
   "payable": false,
   "stateMutability": "nonpayable",
@@ -506,28 +521,29 @@ var abi = [{
   "type": "event"
 }, {
   "constant": true,
-  "inputs": [{
-    "name": "_certId",
-    "type": "bytes32"
-  }],
-  "name": "isCertificateIssued",
+  "inputs": [],
+  "name": "getAllCertificates",
   "outputs": [{
     "name": "",
-    "type": "bool"
-  }],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
-}, {
-  "constant": true,
-  "inputs": [{
-    "name": "_certId",
-    "type": "bytes32"
-  }],
-  "name": "isCertificateValid",
-  "outputs": [{
+    "type": "bytes32[]"
+  }, {
     "name": "",
-    "type": "bool"
+    "type": "bytes32[]"
+  }, {
+    "name": "",
+    "type": "bytes32[]"
+  }, {
+    "name": "",
+    "type": "bytes32[]"
+  }, {
+    "name": "",
+    "type": "bytes32[]"
+  }, {
+    "name": "",
+    "type": "uint256[]"
+  }, {
+    "name": "",
+    "type": "bool[]"
   }],
   "payable": false,
   "stateMutability": "view",
@@ -540,6 +556,9 @@ var abi = [{
   }],
   "name": "getCertificateById",
   "outputs": [{
+    "name": "",
+    "type": "bytes32"
+  }, {
     "name": "",
     "type": "bytes32"
   }, {
@@ -589,80 +608,78 @@ var abi = [{
   "type": "function"
 }, {
   "constant": true,
-  "inputs": [],
-  "name": "getAllCertificates",
+  "inputs": [{
+    "name": "_certId",
+    "type": "bytes32"
+  }],
+  "name": "isCertificateIssued",
   "outputs": [{
     "name": "",
-    "type": "bytes32[]"
-  }, {
-    "name": "",
-    "type": "bytes32[]"
-  }, {
-    "name": "",
-    "type": "bytes32[]"
-  }, {
-    "name": "",
-    "type": "bytes32[]"
-  }, {
-    "name": "",
-    "type": "bytes32[]"
-  }, {
-    "name": "",
-    "type": "uint256[]"
-  }, {
-    "name": "",
-    "type": "bool[]"
+    "type": "bool"
   }],
   "payable": false,
   "stateMutability": "view",
   "type": "function"
 }, {
-  "constant": false,
-  "inputs": [{
-    "name": "_stdId",
-    "type": "bytes32"
-  }, {
-    "name": "_crsId",
-    "type": "bytes32"
-  }, {
-    "name": "_stdName",
-    "type": "bytes32"
-  }, {
-    "name": "_crsName",
-    "type": "bytes32"
-  }, {
-    "name": "_date",
-    "type": "uint256"
-  }],
-  "name": "issueCertificate",
-  "outputs": [],
-  "payable": false,
-  "stateMutability": "nonpayable",
-  "type": "function"
-}, {
-  "constant": false,
+  "constant": true,
   "inputs": [{
     "name": "_certId",
     "type": "bytes32"
   }],
-  "name": "revokeCertificate",
-  "outputs": [],
+  "name": "isCertificateValid",
+  "outputs": [{
+    "name": "",
+    "type": "bool"
+  }],
   "payable": false,
-  "stateMutability": "nonpayable",
+  "stateMutability": "view",
   "type": "function"
 }, {
-  "constant": false,
-  "inputs": [{
-    "name": "_certId",
-    "type": "bytes32"
+  "constant": true,
+  "inputs": [],
+  "name": "isOwner",
+  "outputs": [{
+    "name": "",
+    "type": "bool"
   }],
-  "name": "enactCertificate",
-  "outputs": [],
   "payable": false,
-  "stateMutability": "nonpayable",
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "owner",
+  "outputs": [{
+    "name": "",
+    "type": "address"
+  }],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "paused",
+  "outputs": [{
+    "name": "",
+    "type": "bool"
+  }],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "repository",
+  "outputs": [{
+    "name": "",
+    "type": "address"
+  }],
+  "payable": false,
+  "stateMutability": "view",
   "type": "function"
 }];
-var contractAddress = '0x0da2dda88b77be6302e070171bd78d007470f611';
+var contractAddress = '0x771c8b94f9ccc1308e680b38b6be671c79c591c0';
 /* harmony default export */ __webpack_exports__["default"] = (new _interface_web3__WEBPACK_IMPORTED_MODULE_0__["default"].eth.Contract(abi, contractAddress));
 
 /***/ }),
@@ -767,7 +784,7 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(StudentCertificateIndex)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      idType: 'studentId',
+      idType: 'certificateId',
       loading: false,
       idValue: '',
       errorMessage: '',
@@ -908,13 +925,13 @@ function (_Component) {
       var _this2 = this;
 
       var options = [{
-        key: 'studentId',
-        text: 'Student ID',
-        value: 'studentId'
-      }, {
         key: 'certificateId',
         text: 'Certificate ID',
         value: 'certificateId'
+      }, {
+        key: 'studentId',
+        text: 'Student ID',
+        value: 'studentId'
       }];
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_5__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Form"], {
         onSubmit: this.onSearch
@@ -1019,7 +1036,7 @@ var helperFunctions = {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

@@ -12,7 +12,7 @@ import HelperFunctions from "../utils/constants";
 class StudentCertificateIndex extends Component {
 
     state = {
-        idType: 'studentId',
+        idType: 'certificateId',
         loading: false,
         idValue: '',
         errorMessage: '',
@@ -81,8 +81,8 @@ class StudentCertificateIndex extends Component {
 
     render() {
         const options = [
-            {key: 'studentId', text: 'Student ID', value: 'studentId'},
-            {key: 'certificateId', text: 'Certificate ID', value: 'certificateId'}
+            {key: 'certificateId', text: 'Certificate ID', value: 'certificateId'},
+            {key: 'studentId', text: 'Student ID', value: 'studentId'}
         ];
         return (
             <Layout>
