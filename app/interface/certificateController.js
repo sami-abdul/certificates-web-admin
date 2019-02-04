@@ -412,6 +412,6 @@ let abi = [
 	}
 ]
 
-const contractAddress = '0x771c8b94f9ccc1308e680b38b6be671c79c591c0';
+const contractAddress = '0x5e996d9e767ed29dad1bd49f24c86ab11478804e';
 
 export default new web3.eth.Contract(abi, contractAddress);

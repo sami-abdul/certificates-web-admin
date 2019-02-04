@@ -112,7 +112,7 @@ module.exports = __webpack_require__(/*! next/error */ "next/error")
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /media/sami/Local Disk/Workspace/Xord.one/blockchain-pak-web-admin/node_modules/next/dist/pages/_error.js */"../node_modules/next/dist/pages/_error.js");
+module.exports = __webpack_require__(/*! /media/sami/Workspace/Xord.one/Blockchain-Pakistan-Association/blockchain-pak-web-admin/node_modules/next/dist/pages/_error.js */"../node_modules/next/dist/pages/_error.js");
 
 
 /***/ }),

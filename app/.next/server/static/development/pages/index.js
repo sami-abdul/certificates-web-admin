@@ -679,7 +679,7 @@ var abi = [{
   "stateMutability": "view",
   "type": "function"
 }];
-var contractAddress = '0x771c8b94f9ccc1308e680b38b6be671c79c591c0';
+var contractAddress = '0x5e996d9e767ed29dad1bd49f24c86ab11478804e';
 /* harmony default export */ __webpack_exports__["default"] = (new _interface_web3__WEBPACK_IMPORTED_MODULE_0__["default"].eth.Contract(abi, contractAddress));
 
 /***/ }),
